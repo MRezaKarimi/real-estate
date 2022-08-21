@@ -1,20 +1,26 @@
 import React from "react";
-import NavBarItem from "./navbarItem";
+import { Link } from "react-router-dom";
+import NavBarLink from "./navbarLink";
 
 const NavBar = () => {
   return (
-    <div className="flex flex-row sticky top-0 px-4 bg-white h-14">
+    <div className="flex flex-row sticky top-0 px-4 bg-white h-16">
       <img
         className="py-4"
         src={process.env.PUBLIC_URL + "/logo.png"}
         alt="logo"
       />
-      <NavBarItem label="Home" to="/" />
-      <NavBarItem label="Buy" to="/buy" />
-      <NavBarItem label="Sell" to="/sell" />
+      <NavBarLink label="Home" to="/" />
+      <NavBarLink label="Buy" to="/buy" />
+      <NavBarLink label="Sell" to="/sell" />
       <div className="grow"></div>
-      <NavBarItem label="Login" to="/login" />
-      <NavBarItem label="Sign Up" to="/sign-up" />
+      <NavBarLink label="Login" to="/login" />
+      <Link
+        className="text-white bg-slate-700 rounded-lg text-lg h-8 my-4 mx-3 px-2"
+        to="/sign-up"
+      >
+        Sign Up
+      </Link>
     </div>
   );
 };
