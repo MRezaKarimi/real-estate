@@ -4,7 +4,7 @@ import NavBarLink from "./navbarLink";
 
 const NavBar = () => {
   return (
-    <div className="flex flex-row sticky top-0 px-4 bg-white h-16">
+    <div className="flex flex-row sticky top-0 px-4 bg-white/90 h-16 z-50 backdrop-blur-md">
       <img
         className="py-4"
         src={process.env.PUBLIC_URL + "/logo.png"}
