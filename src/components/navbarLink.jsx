@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const NavBarLink = ({ label, to }) => {
   return (
-    <Link className="text-slate-700 text-lg px-2 py-4" to={to}>
+    <Link className="text-sky-700 text-md font-semibold px-2 py-4" to={to}>
       {label}
     </Link>
   );
