@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 
-const ThumbSlider = ({ images }) => {
+const ImageSlider = ({ images }) => {
   const [index, setIndex] = useState(0);
 
   const nextImage = () => {
@@ -46,4 +46,4 @@ const ThumbSlider = ({ images }) => {
   );
 };
 
-export default ThumbSlider;
+export default ImageSlider;
