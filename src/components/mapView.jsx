@@ -2,6 +2,19 @@ import React from "react";
 import "leaflet/dist/leaflet.css";
 import propertyList from "../services/fakeData.json";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import L from "leaflet";
+import numToMoney from "../utils/numToMoney";
+
+const markerIcon = new L.Icon({
+  iconUrl: process.env.PUBLIC_URL + "/marker.svg",
+  iconRetinaUrl: process.env.PUBLIC_URL + "/marker.svg",
+  iconAnchor: null,
+  shadowUrl: null,
+  shadowSize: null,
+  shadowAnchor: null,
+  iconSize: new L.Point(15, 15),
+  className: "leaflet-div-icon",
+});
 
 const MapView = () => {
   return (
@@ -18,10 +31,14 @@ const MapView = () => {
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           />
           {propertyList.map((property) => (
-            <Marker key={property.id} position={[property.lat, property.long]}>
+            <Marker
+              key={property.id}
+              position={[property.lat, property.long]}
+              icon={markerIcon}
+            >
               <Popup key={property.id} maxHeight="100px">
                 <span className="text-xl font-medium block">
-                  ${property.price}
+                  ${numToMoney(property.price)}
                 </span>
                 <a
                   href={`/details/${property.id}`}
@@ -34,10 +51,6 @@ const MapView = () => {
             </Marker>
           ))}
         </MapContainer>
-        {/* <img
-          className="h-[calc(100vh-4rem)] w-full"
-          src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg"
-        /> */}
       </div>
     </div>
   );
