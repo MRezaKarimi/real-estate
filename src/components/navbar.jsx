@@ -4,12 +4,10 @@ import NavBarLink from "./navbarLink";
 
 const NavBar = () => {
   return (
-    <div className="flex flex-row items-center sticky top-0 px-4 bg-white/90 h-16 z-50 backdrop-blur-md">
-      <img
-        className="py-4 h-16"
-        src={process.env.PUBLIC_URL + "/logo.png"}
-        alt="logo"
-      />
+    <div className="flex flex-row items-center sticky top-0 px-4 bg-white/80 h-16 z-50 backdrop-blur-md">
+      <Link className="text-sky-900 text-3xl font-semibold mx-5" to="/">
+        MyEstate
+      </Link>
       <NavBarLink label="Home" to="/" />
       <NavBarLink label="Buy" to="/buy" />
       <NavBarLink label="Sell" to="/sell" />
