@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropertyItem from "./propertyItem";
-import propertyList from "../services/fakeData.json";
+import { useDispatch, useSelector } from "react-redux";
+import { getProperties } from "../stores/propertySlice";
+import { callApi } from "../actions/api";
 
 const PropertyList = () => {
+  const { list: propertyList } = useSelector((store) => store.property);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(
+      callApi({
+        url: "/buy",
+        method: "GET",
+        onSuccess: getProperties.type,
+        params: { offset: 0, limit: 10 },
+      })
+    );
+  }, []);
+
   return (
     <div className="basis-1/2">
       <div className="grid grid-cols-2 gap-4 px-4">
