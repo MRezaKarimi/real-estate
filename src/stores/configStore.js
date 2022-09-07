@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import apiMiddleware from "../middlewares/apiMiddleware";
-import propertyReducer from "./propertyStore";
+import propertyReducer from "./propertySlice";
 
 export default configureStore({
   reducer: {
