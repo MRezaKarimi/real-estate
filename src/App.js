@@ -1,16 +1,24 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./stores/configStore";
+import BuyHome from "./components/buyHome";
+import Home from "./components/home";
+import NavBar from "./components/navbar";
 import "./App.css";
 
 class App extends Component {
   render() {
     return (
-      <div className="container mx-auto bg-gray-200 rounded-xl shadow-gray-300 shadow-sm border p-8 m-10">
-        <p className="text-3xl text-gray-900 font-bold mb-5">Welcome!</p>
-        <p className="text-gray-500 text-lg">
-          React and Tailwind CSS in action
-        </p>
-      </div>
+      <Provider store={store}>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path="/buy" element={<BuyHome />}></Route>
+            <Route path="/" element={<Home />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </Provider>
     );
   }
 }
