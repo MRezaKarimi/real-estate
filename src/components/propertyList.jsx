@@ -1,11 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PropertyItem from "./propertyItem";
 import { useDispatch, useSelector } from "react-redux";
 import { getProperties } from "../stores/propertySlice";
 import { callApi } from "../actions/api";
 
 const PropertyList = () => {
-  const { list: propertyList } = useSelector((store) => store.property);
+  const [page, setPage] = useState(0);
+  const { list: propertyList, pagesCount } = useSelector(
+    (store) => store.property
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -14,10 +17,10 @@ const PropertyList = () => {
         url: "/buy",
         method: "GET",
         onSuccess: getProperties.type,
-        params: { offset: 0, limit: 10 },
+        params: { offset: page, limit: 10 },
       })
     );
-  }, []);
+  }, [page]);
 
   return (
     <div className="basis-1/2">
@@ -27,14 +30,21 @@ const PropertyList = () => {
         ))}
       </div>
       <div className="flex flex-row justify-center py-8">
-        {[...Array(10)].map((x, i) => (
-          <span
-            key={i}
-            className="text-white text-lg mx-1 px-3 py-0.5 bg-slate-700 rounded-full"
-          >
-            {i}
-          </span>
-        ))}
+        {[...Array(pagesCount)].map((_, i) => {
+          var style =
+            page === i
+              ? "bg-slate-700 text-white"
+              : "text-slate-700 border-2 border-slate-700";
+          return (
+            <span
+              key={i}
+              className={`${style} text-lg text-center mx-1 rounded-lg cursor-pointer w-8 h-8`}
+              onClick={() => setPage(i)}
+            >
+              {i + 1}
+            </span>
+          );
+        })}
       </div>
     </div>
   );

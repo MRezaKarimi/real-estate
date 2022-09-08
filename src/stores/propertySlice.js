@@ -5,6 +5,7 @@ const propertySlice = createSlice({
   initialState: {
     list: [],
     loading: false,
+    pagesCount: 0,
     detail: null,
   },
   reducers: {
@@ -18,6 +19,7 @@ const propertySlice = createSlice({
 
     getProperties: (state, action) => {
       state.list = action.payload["data"];
+      state.pagesCount = action.payload["pages"];
     },
 
     getPropertyDetail: (state, action) => {
