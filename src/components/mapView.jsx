@@ -1,9 +1,9 @@
 import React from "react";
 import "leaflet/dist/leaflet.css";
-import propertyList from "../services/fakeData.json";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import numToMoney from "../utils/numToMoney";
+import { useSelector } from "react-redux";
 
 const markerIcon = new L.Icon({
   iconUrl: process.env.PUBLIC_URL + "/marker.svg",
@@ -12,11 +12,12 @@ const markerIcon = new L.Icon({
   shadowUrl: null,
   shadowSize: null,
   shadowAnchor: null,
-  iconSize: new L.Point(15, 15),
-  className: "leaflet-div-icon",
+  iconSize: new L.Point(30, 40),
 });
 
 const MapView = () => {
+  const { list: propertyList } = useSelector((store) => store.property);
+
   return (
     <div className="basis-1/2">
       <div className="w-full sticky top-16">
