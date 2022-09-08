@@ -7,6 +7,7 @@ const propertySlice = createSlice({
     loading: false,
     pagesCount: 0,
     detail: null,
+    bounds: {},
   },
   reducers: {
     showLoading: (state) => {
@@ -19,6 +20,7 @@ const propertySlice = createSlice({
 
     getProperties: (state, action) => {
       state.list = action.payload["data"];
+      state.bounds = action.payload["bounds"];
       state.pagesCount = action.payload["pages"];
     },
 
