@@ -14,7 +14,7 @@ const NavBar = () => {
       <div className="grow"></div>
       <NavBarLink label="Login" to="/login" />
       <Link
-        className="text-white text-md font-semibold bg-sky-700 rounded-lg h-8 mx-3 px-2 py-1"
+        className="text-white text-md font-semibold bg-sky-700 rounded-full h-8 mx-3 px-3 py-1"
         to="/sign-up"
       >
         Sign Up
