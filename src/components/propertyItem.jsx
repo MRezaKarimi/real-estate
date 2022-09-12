@@ -28,7 +28,7 @@ const PropertyItem = ({ property }) => {
             </span>
           </div>
         </div>
-        <p className="text-gray-600 text-sm mt-1">
+        <p className="text-gray-600 text-sm mt-2">
           <FontAwesomeIcon
             icon={faLocationDot}
             className="text-slate-700 mr-1.5"
