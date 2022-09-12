@@ -22,12 +22,13 @@ function LocationMarker({ onLocationPicked }) {
   );
 }
 
-const LocationPicker = ({ onLocationPicked }) => {
+const LocationPicker = ({ onLocationPicked, className }) => {
   return (
     <MapContainer
       zoom={11}
       center={[40.7128, -74.006]}
       style={{ width: "100%", height: "100%", borderRadius: "0.5rem" }}
+      className={className}
     >
       <TileLayer
         url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
