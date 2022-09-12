@@ -27,7 +27,7 @@ const LocationPicker = ({ onLocationPicked }) => {
     <MapContainer
       zoom={11}
       center={[40.7128, -74.006]}
-      style={{ width: "100%", height: "100%" }}
+      style={{ width: "100%", height: "100%", borderRadius: "0.5rem" }}
     >
       <TileLayer
         url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
