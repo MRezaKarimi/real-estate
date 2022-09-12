@@ -5,7 +5,7 @@ import L from "leaflet";
 import numToMoney from "../utils/numToMoney";
 import { useSelector } from "react-redux";
 
-const markerIcon = new L.Icon({
+export const markerIcon = new L.Icon({
   iconUrl: process.env.PUBLIC_URL + "/marker.svg",
   iconRetinaUrl: process.env.PUBLIC_URL + "/marker.svg",
   iconAnchor: null,
