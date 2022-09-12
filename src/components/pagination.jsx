@@ -6,8 +6,8 @@ const Pagination = ({ page, setPage, pagesCount }) => {
       {[...Array(pagesCount)].map((_, i) => {
         var style =
           page === i
-            ? "bg-slate-700 text-white"
-            : "text-slate-700 border-2 border-slate-700";
+            ? "bg-sky-900 text-white"
+            : "text-sky-900 border-2 border-sky-900";
         return (
           <span
             key={i}
