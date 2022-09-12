@@ -11,7 +11,7 @@ const SellHome = () => {
         <FontAwesomeIcon icon={faLocationDot} className="mr-3" />
         <span className="text-center">Choose your location</span>
       </div>
-      <ChooseLocation />
+      <ContactInfo />
       <div className="flex justify-between my-5 mx-2 sm:mx-0">
         <OutlinedButton text="Back" />
         <FilledButton text="Next" />
@@ -26,6 +26,33 @@ const ChooseLocation = () => {
       <LocationPicker
         className="mx-2 sm:mx-0"
         onLocationPicked={(lat, lng) => console.log(lat, lng)}
+      />
+    </div>
+  );
+};
+
+const ContactInfo = () => {
+  return (
+    <div>
+      <input
+        type="text"
+        className="bg-gray-100 rounded-lg w-full text-lg p-2 my-2 outline-none focus:border-sky-500 border-2"
+        placeholder="Your First Name"
+      />
+      <input
+        type="text"
+        className="bg-gray-100 rounded-lg w-full text-lg p-2 my-2 outline-none focus:border-sky-500 border-2"
+        placeholder="Your Last Name"
+      />
+      <input
+        type="text"
+        className="bg-gray-100 rounded-lg w-full text-lg p-2 my-2 outline-none focus:border-sky-500 border-2"
+        placeholder="Your Email Address"
+      />
+      <input
+        type="text"
+        className="bg-gray-100 rounded-lg w-full text-lg p-2 my-2 outline-none focus:border-sky-500 border-2"
+        placeholder="Your Phone Number"
       />
     </div>
   );
