@@ -5,7 +5,7 @@ import Markers from "./markers";
 
 const MapView = () => {
   return (
-    <div className="basis-1/2">
+    <div className="basis-1/2 hidden lg:block">
       <div className="w-full sticky top-16">
         <MapContainer
           zoom={10}
