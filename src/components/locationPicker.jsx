@@ -27,7 +27,7 @@ const LocationPicker = ({ onLocationPicked, className }) => {
     <MapContainer
       zoom={11}
       center={[40.7128, -74.006]}
-      style={{ width: "100%", height: "100%", borderRadius: "0.5rem" }}
+      style={{ height: "100%", borderRadius: "0.5rem" }}
       className={className}
     >
       <TileLayer
