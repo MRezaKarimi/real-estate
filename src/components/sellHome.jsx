@@ -99,9 +99,9 @@ const PropertyDetailsForm = () => {
       <FormHeader title="Add Your Home Details" icon={faHome} />
       <div className="flex items-center text-sky-900 font-bold text-2xl">
         $&nbsp;
-        <InputField label="" />
+        <InputField label="" placeholder="Price" />
         <div className="w-10"></div>m<sup>2</sup>&nbsp;
-        <InputField label="" />
+        <InputField label="" placeholder="Area" />
       </div>
       <SelectorField label="Bedrooms" />
       <SelectorField label="Bathrooms" />
