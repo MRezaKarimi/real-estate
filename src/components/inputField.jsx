@@ -29,7 +29,7 @@ const InputField = ({ label, placeholder, type, onChange, validator }) => {
         value={value}
         onChange={handleChange}
         id={label.replaceAll(" ", "_")}
-        className="bg-gray-100 rounded-lg w-full text-lg p-2 my-1 outline-none focus:border-sky-500 border-2"
+        className="bg-gray-100 rounded-lg w-full p-2 my-1 outline-none focus:border-sky-500 border-2"
         placeholder={placeholder}
       />
       <div className="text-xs text-red-600">{error}</div>
