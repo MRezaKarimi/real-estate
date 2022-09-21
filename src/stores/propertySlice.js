@@ -7,7 +7,7 @@ const propertySlice = createSlice({
     loading: false,
     pagesCount: 0,
     detail: null,
-    bounds: {},
+    mapBounds: {},
   },
   reducers: {
     showLoading: (state) => {

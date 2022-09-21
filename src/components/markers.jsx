@@ -16,11 +16,13 @@ export const markerIcon = new L.Icon({
 });
 
 const Markers = () => {
-  const { list: propertyList, bounds } = useSelector((store) => store.property);
+  const { list: propertyList, mapBounds } = useSelector(
+    (store) => store.property
+  );
   const map = useMap();
   useEffect(() => {
-    if (bounds["top_left"] && bounds["bottom_right"]) {
-      map.fitBounds([bounds["top_left"], bounds["bottom_right"]]);
+    if (mapBounds["top_left"] && mapBounds["bottom_right"]) {
+      map.fitBounds([mapBounds["top_left"], mapBounds["bottom_right"]]);
     }
   }, [propertyList]);
 
