@@ -16,9 +16,7 @@ export const markerIcon = new L.Icon({
 });
 
 const Markers = () => {
-  const { list: propertyList, mapBounds } = useSelector(
-    (store) => store.property
-  );
+  const { propertyList, mapBounds } = useSelector((store) => store.property);
   const map = useMap();
   useEffect(() => {
     if (mapBounds["top_left"] && mapBounds["bottom_right"]) {
