@@ -1,35 +1,61 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
+
+const API = axios.create({ baseURL: process.env.REACT_APP_BASE_URL });
+
+export const getProperties = createAsyncThunk(
+  "property/getProperties",
+  async ({ page, priceFrom, priceTo }, { rejectWithValue }) => {
+    try {
+      console.log(process.env.REACT_APP_BASE_URL);
+      const response = await API.get("/buy", {
+        params: { offset: page, limit: 10, priceFrom, priceTo },
+      });
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
+export const getPropertyById = createAsyncThunk(
+  "property/getPropertyById",
+  async (id, { rejectWithValue }) => {
+    try {
+      const response = await API.get(`/property/${id}`, {
+        params: { offset: page, limit: 10, priceFrom, priceTo },
+      });
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
 
 const propertySlice = createSlice({
   name: "property",
   initialState: {
-    list: [],
+    propertyList: [],
+    propertyDetail: null,
     loading: false,
+    error: "",
     pagesCount: 0,
-    detail: null,
     mapBounds: {},
   },
-  reducers: {
-    showLoading: (state) => {
+  extraReducers: {
+    [getProperties.pending]: (state, action) => {
       state.loading = true;
     },
-
-    hideLoading: (state) => {
+    [getProperties.fulfilled]: (state, action) => {
       state.loading = false;
-    },
-
-    getProperties: (state, action) => {
-      state.list = action.payload["data"];
-      state.bounds = action.payload["bounds"];
+      state.propertyList = action.payload["data"];
+      state.mapBounds = action.payload["bounds"];
       state.pagesCount = action.payload["pages"];
     },
-
-    getPropertyDetail: (state, action) => {
-      state.detail = action.payload;
+    [getProperties.rejected]: (state, action) => {
+      state.loading = false;
     },
   },
 });
 
-export const { getProperties, getPropertyDetail, showLoading, hideLoading } =
-  propertySlice.actions;
 export default propertySlice.reducer;
