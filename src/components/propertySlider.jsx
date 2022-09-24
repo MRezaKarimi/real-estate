@@ -20,10 +20,7 @@ function PropertySlider() {
 
   if (loading) {
     return (
-      <div
-        className="flex justify-center items-center"
-        style={{ height: "10rem" }}
-      >
+      <div className="flex justify-center items-center h-64">
         <Ellipsis color="#0369a1" />
       </div>
     );
