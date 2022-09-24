@@ -32,10 +32,23 @@ export const getPropertyById = createAsyncThunk(
   }
 );
 
+export const getRecentProperties = createAsyncThunk(
+  "property/getRecentProperties",
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await API.get(`/recent-properties`);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
 const propertySlice = createSlice({
   name: "property",
   initialState: {
     propertyList: [],
+    recentProperties: [],
     propertyDetail: null,
     loading: false,
     error: "",
@@ -53,6 +66,16 @@ const propertySlice = createSlice({
       state.pagesCount = action.payload["pages"];
     },
     [getProperties.rejected]: (state, action) => {
+      state.loading = false;
+    },
+    [getRecentProperties.pending]: (state, action) => {
+      state.loading = true;
+    },
+    [getRecentProperties.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.recentProperties = action.payload;
+    },
+    [getRecentProperties.rejected]: (state, action) => {
       state.loading = false;
     },
   },
