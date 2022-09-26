@@ -11,7 +11,7 @@ const Pagination = ({ page, setPage, pagesCount }) => {
         return (
           <span
             key={i}
-            className={`${style} text-lg text-center mx-1 rounded-lg cursor-pointer w-8 h-8`}
+            className={`${style} text-lg text-center mx-1 rounded-full cursor-pointer w-8 h-8`}
             onClick={() => setPage(i)}
           >
             {i + 1}
