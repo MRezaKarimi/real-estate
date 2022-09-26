@@ -10,7 +10,7 @@ import ImageSlider from "./imageSlider";
 
 const PropertyItem = ({ property }) => {
   return (
-    <div className="flex flex-col mb-4 rounded-xl shadow-xl shadow-slate-300">
+    <div className="flex flex-col mb-4 rounded-xl shadow-xl shadow-sky-900/15">
       <ImageSlider images={property.images} />
       <a href={`/property/${property.id}`} target="blank" className="p-2.5">
         <div className="flex flex-row justify-between">
