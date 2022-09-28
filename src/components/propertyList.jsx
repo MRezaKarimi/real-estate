@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import PropertyItem from "./propertyItem";
 import { useDispatch, useSelector } from "react-redux";
 import { Ellipsis } from "react-awesome-spinners";
+import { useSearchParams } from "react-router-dom";
 import { getProperties } from "../stores/propertySlice";
 import Pagination from "./pagination";
 
 const PropertyList = () => {
-  const [page, setPage] = useState(1);
   const { propertyList, pagesCount, loading } = useSelector(
     (store) => store.property
   );
+  const [queryParams] = useSearchParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getProperties({ page }));
+    dispatch(getProperties({ page: queryParams.get("page") ?? 1 }));
     window.scrollTo(0, 0);
-  }, [page]);
+  }, [queryParams]);
 
   return (
     <div className="basis-full lg:basis-1/2">
@@ -34,7 +35,7 @@ const PropertyList = () => {
         </div>
       )}
 
-      <Pagination page={page} setPage={setPage} pagesCount={pagesCount} />
+      <Pagination pagesCount={pagesCount} />
     </div>
   );
 };

@@ -4,17 +4,21 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { useSearchParams } from "react-router-dom";
 
-const Pagination = ({ page, setPage, pagesCount }) => {
+const Pagination = ({ pagesCount }) => {
+  const [queryParams, setQueryParams] = useSearchParams();
+  const page = Number(queryParams.get("page") ?? 1);
+
   const handleNextPage = () => {
     if (page < pagesCount) {
-      setPage(page + 1);
+      setQueryParams({ page: page + 1 });
     }
   };
 
   const handlePrevPage = () => {
     if (page > 1) {
-      setPage(page - 1);
+      setQueryParams({ page: page - 1 });
     }
   };
 
