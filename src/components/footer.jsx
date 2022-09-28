@@ -10,7 +10,7 @@ import React from "react";
 
 const SocialIcon = ({ icon, url }) => {
   return (
-    <a href={url ?? "#"}>
+    <a href={url ?? "#"} target="blank">
       <FontAwesomeIcon
         icon={icon}
         className="border-[1px] border-white rounded-full p-1.5 mx-1 w-4 h-4"
