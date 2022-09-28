@@ -7,7 +7,6 @@ export const getProperties = createAsyncThunk(
   "property/getProperties",
   async ({ page, priceFrom, priceTo }, { rejectWithValue }) => {
     try {
-      console.log(process.env.REACT_APP_BASE_URL);
       const response = await API.get("/buy", {
         params: { offset: page, limit: 10, priceFrom, priceTo },
       });
