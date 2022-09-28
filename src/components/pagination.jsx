@@ -1,23 +1,46 @@
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 const Pagination = ({ page, setPage, pagesCount }) => {
+  const handleNextPage = () => {
+    if (page < pagesCount) {
+      setPage(page + 1);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (page > 1) {
+      setPage(page - 1);
+    }
+  };
+
   return (
-    <div className="flex flex-row justify-center py-8">
-      {[...Array(pagesCount)].map((_, i) => {
-        var style =
-          page === i
-            ? "bg-sky-900 text-white"
-            : "text-sky-900 border-2 border-sky-900";
-        return (
-          <span
-            key={i}
-            className={`${style} text-lg text-center mx-1 rounded-full cursor-pointer w-8 h-8`}
-            onClick={() => setPage(i)}
-          >
-            {i + 1}
-          </span>
-        );
-      })}
+    <div className="flex flex-row justify-center py-8 text-sky-900">
+      <FontAwesomeIcon
+        icon={faChevronLeft}
+        onClick={handlePrevPage}
+        className={`w-5 h-5  text-white rounded-full p-1.5 ${
+          page === 1
+            ? "bg-gray-400 cursor-not-allowed"
+            : "bg-sky-900 cursor-pointer"
+        }`}
+      />
+
+      <div className="text-lg font-semibold mx-4">{`${page} of ${pagesCount}`}</div>
+
+      <FontAwesomeIcon
+        icon={faChevronRight}
+        onClick={handleNextPage}
+        className={`w-5 h-5  text-white rounded-full p-1.5 ${
+          page === pagesCount
+            ? "bg-gray-400 cursor-not-allowed"
+            : "bg-sky-900 cursor-pointer"
+        }`}
+      />
     </div>
   );
 };
