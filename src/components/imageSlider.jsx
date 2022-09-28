@@ -24,8 +24,6 @@ const ImageSlider = ({ images }) => {
     }
   };
 
-  console.log(images[index]);
-
   return (
     <React.Fragment>
       <div
