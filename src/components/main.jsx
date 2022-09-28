@@ -43,7 +43,7 @@ const Main = () => {
           </div>
         </div>
         <img
-          src={`${process.env.PUBLIC_URL}/r.svg`}
+          src={`${process.env.PUBLIC_URL}/buy.svg`}
           className="w-0 sm:w-1/2 md:w-2/5"
           style={{ height: "calc(100vh - 4rem)" }}
         />
@@ -66,12 +66,10 @@ const Main = () => {
             title="Advanced Search"
             description="Easily find a home that matches your needs and budget."
           />
-
           <WhyUsItem
             title="Free To Use"
             description="MyEstate is free and will remain free for ever."
           />
-
           <WhyUsItem
             title="Promote Your Property"
             description="Everyday thousands of people visit MyEstate worldwide."
@@ -79,7 +77,7 @@ const Main = () => {
         </div>
         <img
           className="w-0 sm:w-1/2 md:w-2/5"
-          src={`${process.env.PUBLIC_URL}/p.svg`}
+          src={`${process.env.PUBLIC_URL}/search.svg`}
         />
       </div>
       <Footer />
