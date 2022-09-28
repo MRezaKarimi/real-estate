@@ -6,7 +6,7 @@ import { getProperties } from "../stores/propertySlice";
 import Pagination from "./pagination";
 
 const PropertyList = () => {
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
   const { propertyList, pagesCount, loading } = useSelector(
     (store) => store.property
   );
