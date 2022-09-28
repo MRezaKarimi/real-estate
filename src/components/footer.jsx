@@ -1,5 +1,5 @@
 import {
-  faFacebookF,
+  faGithub,
   faInstagram,
   faLinkedinIn,
   faTwitter,
@@ -8,9 +8,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import React from "react";
 
-const SocialIcon = ({ icon }) => {
+const SocialIcon = ({ icon, url }) => {
   return (
-    <a href="#">
+    <a href={url ?? "#"}>
       <FontAwesomeIcon
         icon={icon}
         className="border-[1px] border-white rounded-full p-1.5 mx-1 w-4 h-4"
@@ -40,7 +40,10 @@ const Footer = () => {
         </li>
         <li>
           <div className="flex my-3">
-            <SocialIcon icon={faFacebookF} />
+            <SocialIcon
+              icon={faGithub}
+              url="https://github.com/MRezaKarimi/real-estate"
+            />
             <SocialIcon icon={faTwitter} />
             <SocialIcon icon={faLinkedinIn} />
             <SocialIcon icon={faInstagram} />
