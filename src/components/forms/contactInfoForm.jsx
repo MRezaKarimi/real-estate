@@ -2,9 +2,9 @@ import {
   emailFieldValidator,
   phoneFieldValidator,
   requiredFieldValidator,
-} from "../utils/validators";
+} from "../../utils/validators";
 import FormHeader from "./formHeader";
-import InputField from "./inputField";
+import InputField from "../inputField";
 
 const ContactInfoForm = ({ style }) => {
   return (

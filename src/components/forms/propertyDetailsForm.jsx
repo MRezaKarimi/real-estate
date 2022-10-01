@@ -1,8 +1,8 @@
 import { faDollar, faRuler } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FormHeader from "./formHeader";
-import InputField from "./inputField";
-import SelectorField from "./selectorField";
+import InputField from "../inputField";
+import SelectorField from "../selectorField";
 
 const PropertyDetailsForm = ({ style }) => {
   return (

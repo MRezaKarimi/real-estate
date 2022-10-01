@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { FilledButton, OutlinedButton } from "./buttons";
-import PropertyLocationForm from "./propertyLocationForm";
-import ContactInfoForm from "./contactInfoForm";
-import PropertyDetailsForm from "./propertyDetailsForm";
+import PropertyLocationForm from "./forms/propertyLocationForm";
+import ContactInfoForm from "./forms/contactInfoForm";
+import PropertyDetailsForm from "./forms/propertyDetailsForm";
 
 const SellHome = () => {
   const [step, setStep] = useState(0);

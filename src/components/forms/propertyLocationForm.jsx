@@ -1,6 +1,6 @@
 import { useState } from "react";
 import FormHeader from "./formHeader";
-import LocationPicker from "./locationPicker";
+import LocationPicker from "../locationPicker";
 
 const PropertyLocationForm = ({ style }) => {
   const [lat, setLat] = useState(null);
