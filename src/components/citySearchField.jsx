@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import InputField from "./inputField";
+import InputField from "./inputFields/inputField";
 
 const CitySearchField = ({ onChange }) => {
   const [showSuggestion, setShowSuggestion] = useState(false);
