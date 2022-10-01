@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const SelectorField = ({ label, onChange, max = 8 }) => {
+const SelectorField = ({ label, onChange, name, max = 8 }) => {
   const [value, setValue] = useState(1);
   const handleChange = (newValue) => {
     if (onChange) {
@@ -17,7 +17,11 @@ const SelectorField = ({ label, onChange, max = 8 }) => {
       >
         {label}
       </label>
-
+      <input
+        value={value}
+        type="hidden"
+        name={name ?? label.toLowerCase().replaceAll(" ", "_")}
+      />
       <table className="border-separate table-fixed border-spacing-0 border-2 border-sky-700 w-full text-center rounded-lg my-1">
         <tbody>
           <tr>
