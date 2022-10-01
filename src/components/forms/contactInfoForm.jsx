@@ -4,7 +4,7 @@ import {
   requiredFieldValidator,
 } from "../../utils/validators";
 import FormHeader from "./formHeader";
-import InputField from "../inputField";
+import InputField from "../inputFields/inputField";
 
 const ContactInfoForm = ({ style }) => {
   return (

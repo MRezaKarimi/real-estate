@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, useMapEvents, Marker } from "react-leaflet";
-import { markerIcon } from "./markers";
+import { markerIcon } from "../markers";
 
 function LocationMarker({ onLocationPicked }) {
   const [position, setPosition] = useState(null);
