@@ -1,8 +1,14 @@
 import React from "react";
 
-export const OutlinedButton = ({ text, onClick, disabled = false }) => {
+export const OutlinedButton = ({
+  text,
+  onClick,
+  type = "button",
+  disabled = false,
+}) => {
   return (
-    <div
+    <button
+      type={type}
       className={`h-10 flex items-center justify-center border-2 rounded-lg px-4 py-1 font-semibold ${
         disabled
           ? "cursor-not-allowed border-gray-400 text-gray-400"
@@ -11,13 +17,19 @@ export const OutlinedButton = ({ text, onClick, disabled = false }) => {
       onClick={disabled ? null : onClick}
     >
       {text}
-    </div>
+    </button>
   );
 };
 
-export const FilledButton = ({ text, onClick, disabled = false }) => {
+export const FilledButton = ({
+  text,
+  onClick,
+  type = "button",
+  disabled = false,
+}) => {
   return (
-    <div
+    <button
+      type={type}
       className={`h-10 flex items-center justify-center rounded-lg px-4 py-1 text-white font-semibold ${
         disabled
           ? "cursor-not-allowed bg-gray-400"
@@ -26,6 +38,6 @@ export const FilledButton = ({ text, onClick, disabled = false }) => {
       onClick={disabled ? null : onClick}
     >
       {text}
-    </div>
+    </button>
   );
 };
