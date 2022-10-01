@@ -2,7 +2,7 @@ import { useState } from "react";
 import FormHeader from "./formHeader";
 import LocationPicker from "./locationPicker";
 
-const LocationField = ({ style }) => {
+const PropertyLocationForm = ({ style }) => {
   const [lat, setLat] = useState(null);
   const [lng, setLng] = useState(null);
 
@@ -29,4 +29,4 @@ const LocationField = ({ style }) => {
   );
 };
 
-export default LocationField;
+export default PropertyLocationForm;
