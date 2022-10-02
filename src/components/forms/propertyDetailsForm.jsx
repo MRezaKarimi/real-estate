@@ -16,13 +16,25 @@ const PropertyDetailsForm = ({ style }) => {
           icon={faDollar}
           className="text-sky-900 text-xl mr-2"
         />
-        <InputField placeholder="Price" name="price" />
+        <InputField
+          placeholder="Price"
+          name="price"
+          validation="required|number"
+        />
         <FontAwesomeIcon icon={faRuler} className="text-sky-900 text-xl mx-2" />
-        <InputField placeholder="Area" name="area" />
+        <InputField
+          placeholder="Area"
+          name="area"
+          validation="required|number"
+        />
       </div>
       <SelectorField label="Bedrooms" />
       <SelectorField label="Bathrooms" />
-      <InputField label="Address" placeholder="Your Home's Address" />
+      <InputField
+        label="Address"
+        placeholder="Your Home's Address"
+        validation="required"
+      />
     </div>
   );
 };
