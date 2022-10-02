@@ -26,6 +26,13 @@ function numberFieldValidator(value = "") {
   return "Invalid number";
 }
 
+function passwordFieldValidator(value = "") {
+  if (/.{8}/.test(value)) {
+    return null;
+  }
+  return "Password must contain at least 8 characters";
+}
+
 export default function validate(inputValue, validationPattern) {
   for (const validation of validationPattern.split("|")) {
     let validator;
@@ -42,6 +49,9 @@ export default function validate(inputValue, validationPattern) {
         break;
       case "number":
         validator = numberFieldValidator;
+        break;
+      case "password":
+        validator = passwordFieldValidator;
         break;
       default:
         break;
