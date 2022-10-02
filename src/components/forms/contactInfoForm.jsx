@@ -1,8 +1,3 @@
-import {
-  emailFieldValidator,
-  phoneFieldValidator,
-  requiredFieldValidator,
-} from "../../utils/validators";
 import FormHeader from "./formHeader";
 import InputField from "../inputFields/inputField";
 
@@ -17,25 +12,25 @@ const ContactInfoForm = ({ style }) => {
         label="First Name"
         placeholder="Your First Name"
         type="text"
-        validator={requiredFieldValidator}
+        validation="required"
       />
       <InputField
         label="Last Name"
         placeholder="Your Last Name"
         type="text"
-        validator={requiredFieldValidator}
+        validation="required"
       />
       <InputField
         label="Email Address"
         placeholder="Your Email Address"
         type="email"
-        validator={emailFieldValidator}
+        validation="required|email"
       />
       <InputField
         label="Phone Number"
         placeholder="Your Phone Number"
         type="text"
-        validator={phoneFieldValidator}
+        validation="required|phone"
       />
     </div>
   );

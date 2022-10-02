@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import validate from "../../utils/validators";
 
 const InputField = ({
   type,
@@ -6,7 +7,7 @@ const InputField = ({
   label = "",
   placeholder,
   onChange,
-  validator,
+  validation,
   onUnFocus,
   onFocus,
 }) => {
@@ -19,8 +20,8 @@ const InputField = ({
     if (onChange) {
       onChange(newValue);
     }
-    if (validator) {
-      setError(validator(newValue));
+    if (validation) {
+      setError(validate(newValue, validation));
     }
     setValue(newValue);
   };
