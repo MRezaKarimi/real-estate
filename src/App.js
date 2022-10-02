@@ -7,6 +7,8 @@ import Main from "./components/main";
 import NavBar from "./components/navbar";
 import "./App.css";
 import SellHome from "./components/sellHome";
+import Login from "./components/login";
+import SignUp from "./components/signUp";
 
 class App extends Component {
   render() {
@@ -17,6 +19,8 @@ class App extends Component {
           <Routes>
             <Route path="/buy" element={<BuyHome />}></Route>
             <Route path="/sell" element={<SellHome />}></Route>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/sign-up" element={<SignUp />}></Route>
             <Route path="/" element={<Main />}></Route>
           </Routes>
         </BrowserRouter>
