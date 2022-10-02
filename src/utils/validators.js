@@ -54,6 +54,7 @@ export default function validate(inputValue, validationPattern) {
         validator = passwordFieldValidator;
         break;
       default:
+        console.warn(`Invalid validation: ${validation}`);
         break;
     }
 
