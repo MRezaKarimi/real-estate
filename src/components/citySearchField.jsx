@@ -7,7 +7,6 @@ const CitySearchField = ({ onChange }) => {
   return (
     <div className="grow relative">
       <InputField
-        label=""
         placeholder="Enter an address, neighborhood, city, or state"
         type="text"
         onFocus={() => setShowSuggestion(true)}

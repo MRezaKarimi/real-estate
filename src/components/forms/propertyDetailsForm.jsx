@@ -16,9 +16,9 @@ const PropertyDetailsForm = ({ style }) => {
           icon={faDollar}
           className="text-sky-900 text-xl mr-2"
         />
-        <InputField label="" placeholder="Price" name="price" />
+        <InputField placeholder="Price" name="price" />
         <FontAwesomeIcon icon={faRuler} className="text-sky-900 text-xl mx-2" />
-        <InputField label="" placeholder="Area" name="area" />
+        <InputField placeholder="Area" name="area" />
       </div>
       <SelectorField label="Bedrooms" />
       <SelectorField label="Bathrooms" />

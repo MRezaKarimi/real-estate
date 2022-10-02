@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 const InputField = ({
-  label,
   type,
   name,
+  label = "",
   placeholder,
   onChange,
   validator,
