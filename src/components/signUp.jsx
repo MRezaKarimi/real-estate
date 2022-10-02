@@ -14,8 +14,17 @@ const SignUp = () => {
   return (
     <div className="flex flex-col m-auto p-2 max-w-sm">
       <FormHeader title="Create new account" />
-      <InputField placeholder="Username" name="username" />
-      <InputField placeholder="Password" name="password" type="password" />
+      <InputField
+        placeholder="Username"
+        name="username"
+        validation="required|email"
+      />
+      <InputField
+        placeholder="Password"
+        name="password"
+        type="password"
+        validation="password"
+      />
       <div className="my-2 mx-2 sm:mx-0 flex flex-col">
         <FilledButton text="Sign Up" />
       </div>
