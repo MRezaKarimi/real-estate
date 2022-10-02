@@ -26,7 +26,7 @@ const InputField = ({
   };
 
   return (
-    <div className="my-4 mx-2 sm:mx-0">
+    <div className="my-2 mx-2 sm:mx-0">
       <label
         htmlFor={label.replaceAll(" ", "_")}
         className="text-sky-900 font-semibold"
