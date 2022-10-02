@@ -13,7 +13,7 @@ import SocialLoginButton from "./socialLoginButton";
 const SignUp = () => {
   return (
     <div className="flex flex-col m-auto p-2 max-w-sm">
-      <FormHeader title="Create new account" />
+      <FormHeader title="Create a new account" />
       <InputField
         placeholder="Username"
         name="username"
