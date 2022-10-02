@@ -26,8 +26,8 @@ const SignUp = () => {
         </span>
       </p>
       <div className="self-center my-7">
-        Already have an account?&nbsp;
-        <NavBarLink to="/login" label="Login" className="contents" />
+        Already have an account?
+        <NavBarLink to="/login" label="Login" />
       </div>
       <div className="relative my-5">
         <div className="h-[0.1rem] bg-gray-300 rounded-xl mx-auto w-full"></div>

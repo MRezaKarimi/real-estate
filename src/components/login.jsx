@@ -20,8 +20,8 @@ const Login = () => {
         <FilledButton text="Login" />
       </div>
       <div className="self-center my-7">
-        New user?&nbsp;
-        <NavBarLink to="/sign-up" label="Sign Up" className="contents" />
+        New user?
+        <NavBarLink to="/sign-up" label="Sign Up" />
       </div>
       <div className="relative my-5">
         <div className="h-[0.1rem] bg-gray-300 rounded-xl mx-auto w-full"></div>
