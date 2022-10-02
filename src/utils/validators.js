@@ -19,6 +19,13 @@ function requiredFieldValidator(value = "") {
   return "Field is required";
 }
 
+function numberFieldValidator(value = "") {
+  if (/[0-9].+/.test(value)) {
+    return null;
+  }
+  return "Invalid number";
+}
+
 export default function validate(inputValue, validationPattern) {
   for (const validation of validationPattern.split("|")) {
     let validator;
@@ -32,6 +39,9 @@ export default function validate(inputValue, validationPattern) {
         break;
       case "phone":
         validator = phoneFieldValidator;
+        break;
+      case "number":
+        validator = numberFieldValidator;
         break;
       default:
         break;
