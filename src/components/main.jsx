@@ -20,7 +20,7 @@ const Main = () => {
             <h2 className="text-sky-900 font-bold text-6xl py-10 leading-[80px]">
               Find Your Dream Home
             </h2>
-            <div className="flex flex-col sm:flex-row mb-4 rounded-xl shadow-xl shadow-sky-900/15 p-8">
+            <div className="flex flex-col sm:flex-row items-center mb-4 rounded-xl shadow-xl shadow-sky-900/15 p-8">
               <CitySearchField onChange={(value) => setCity(value)} />
               <div className="my-4 mx-2 sm:place-self-center">
                 <FilledButton
