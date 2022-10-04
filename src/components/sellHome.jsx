@@ -20,7 +20,7 @@ const SellHome = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="flex sm:px-10 justify-between">
+      <div className="flex w-11/12 mx-auto justify-between">
         <div className="w-screen sm:w-1/2">
           <PropertyLocationForm
             style={{
@@ -55,7 +55,7 @@ const SellHome = () => {
         </div>
         <img
           src={`${process.env.PUBLIC_URL}/sell.svg`}
-          className="w-0 sm:w-1/2 md:w-2/5"
+          className="w-0 sm:w-1/2 md:w-2/5 sticky top-16"
           style={{ height: "calc(100vh - 4rem)" }}
         />
       </div>

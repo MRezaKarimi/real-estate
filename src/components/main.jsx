@@ -1,18 +1,12 @@
 import React, { useState } from "react";
 import { createSearchParams, useNavigate } from "react-router-dom";
-import { FilledButton } from "./buttons";
+import { FilledButton, OutlinedButton } from "./buttons";
 import Footer from "./footer";
 import PropertySlider from "./propertySlider";
 import CitySearchField from "./citySearchField";
-
-const WhyUsItem = ({ title, description }) => {
-  return (
-    <div className="rounded-lg border-l-8 border-sky-900 shadow-xl shadow-sky-900/15 hover:shadow-gray-300 duration-500 cursor-pointer px-5 py-5 my-6">
-      <p className="text-sky-900 text-xl font-bold">{title}</p>
-      <p className="text-gray-600 mt-3">{description}</p>
-    </div>
-  );
-};
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
+import InputField from "./inputFields/inputField";
 
 const Main = () => {
   const navigate = useNavigate();
@@ -20,8 +14,8 @@ const Main = () => {
 
   return (
     <>
-      <div className="flex justify-around">
-        <div className="w-screen sm:w-1/2 p-8">
+      <div className="flex justify-between w-11/12 mx-auto">
+        <div className="w-screen sm:w-1/2">
           <div>
             <h2 className="text-sky-900 font-bold text-6xl py-10 leading-[80px]">
               Find Your Dream Home
@@ -81,8 +75,8 @@ const Main = () => {
       <h2 className="text-sky-900 font-bold text-4xl mt-20 mb-10 leading-[80px] text-center">
         Why MyEstate?
       </h2>
-      <div className="flex justify-between mx-2 mb-20 sm:mx-4">
-        <div className="w-full sm:w-1/2 p-10">
+      <div className="flex justify-between mx-auto mb-20 w-11/12">
+        <div className="w-full sm:w-1/2">
           <WhyUsItem
             title="Advanced Search"
             description="Easily find a home that matches your needs and budget."
@@ -103,6 +97,15 @@ const Main = () => {
       </div>
       <Footer />
     </>
+  );
+};
+
+const WhyUsItem = ({ title, description }) => {
+  return (
+    <div className="rounded-lg border-l-8 border-sky-900 shadow-xl shadow-sky-900/15 hover:shadow-gray-300 duration-500 cursor-pointer p-5 my-6">
+      <p className="text-sky-900 text-xl font-bold">{title}</p>
+      <p className="text-gray-600 mt-3">{description}</p>
+    </div>
   );
 };
 
