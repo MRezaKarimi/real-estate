@@ -2,18 +2,22 @@ import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import NavBarLink from "./navbarLink";
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const location = useLocation();
 
   return (
-    <div className="flex flex-row justify-between sm:justify-start items-center sticky top-0 px-4 bg-white h-16 z-50">
+    <div
+      className={`sticky top-0 bg-white z-50 flex flex-row justify-between sm:justify-start items-center mx-auto h-16 ${
+        location.pathname === "/buy" ? "w-full px-4" : "w-11/12"
+      }`}
+    >
       <Link className="text-sky-900 text-3xl font-semibold mr-4" to="/">
         MyEstate
       </Link>
-
       <div className="block sm:hidden">
         <FontAwesomeIcon
           icon={showMenu ? faClose : faBars}
@@ -32,7 +36,6 @@ const NavBar = () => {
           </div>
         </div>
       </div>
-
       <div className="hidden sm:flex items-center grow">
         <NavBarLink label="Buy" to="/buy" />
         <NavBarLink label="Sell" to="/sell" className="grow" />
