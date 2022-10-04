@@ -57,6 +57,27 @@ const Main = () => {
       </div>
       <PropertySlider />
 
+      <div className="my-14 mx-auto w-11/12 bg-sky-900 rounded-xl p-5 sm:p-10">
+        <div className="flex flex-col md:flex-row items-stretch md:items-center text-gray-100">
+          <FontAwesomeIcon
+            icon={faPaperPlane}
+            className="mr-10 h-12 hidden md:block"
+          />
+          <div className="grow">
+            <p className="text-3xl font-semibold">Subscribe to newsletter</p>
+            <p className="my-2">
+              Get the latest listed properties in your inbox everyday
+            </p>
+          </div>
+          <div className="flex flex-col items-stretch sm:flex-row sm:items-center">
+            <div className="sm:mr-2">
+              <InputField name="email" placeholder="Your email address" />
+            </div>
+            <FilledButton text="Subscribe" color="sky-300" />
+          </div>
+        </div>
+      </div>
+
       <h2 className="text-sky-900 font-bold text-4xl mt-20 mb-10 leading-[80px] text-center">
         Why MyEstate?
       </h2>
