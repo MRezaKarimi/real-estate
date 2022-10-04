@@ -12,7 +12,9 @@ const NavBar = () => {
   return (
     <div
       className={`sticky top-0 bg-white z-50 flex flex-row justify-between sm:justify-start items-center mx-auto h-16 ${
-        location.pathname === "/buy" ? "w-full px-4" : "w-11/12"
+        location.pathname === "/buy"
+          ? "w-full px-4"
+          : "w-full px-[calc(100vw*(1/24))] sm:w-11/12 sm:px-0"
       }`}
     >
       <Link className="text-sky-900 text-3xl font-semibold mr-4" to="/">
@@ -25,7 +27,7 @@ const NavBar = () => {
           onClick={() => setShowMenu(!showMenu)}
         />
         <div
-          className="sm:hidden absolute top-16 right-0 w-full bg-white shadow-xl shadow-sky-900/15 duration-300 origin-top overflow-hidden"
+          className="sm:hidden absolute top-16 right-0 w-full bg-white shadow-xl shadow-sky-900/15 duration-300 origin-top overflow-hidden z-50"
           style={{ transform: showMenu ? "scaleY(1)" : "scaleY(0)" }}
         >
           <div className="flex flex-col m-2">
