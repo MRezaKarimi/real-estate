@@ -9,7 +9,7 @@ export const OutlinedButton = ({
   return (
     <button
       type={type}
-      className={`h-10 flex items-center justify-center border-2 rounded-lg px-4 py-1 font-semibold ${
+      className={`h-10 flex items-center justify-center border-2 rounded-lg px-4 py-1 my-2 font-semibold ${
         disabled
           ? "cursor-not-allowed border-gray-400 text-gray-400"
           : "cursor-pointer border-sky-700 text-sky-700"
@@ -30,7 +30,7 @@ export const FilledButton = ({
   return (
     <button
       type={type}
-      className={`h-10 flex items-center justify-center rounded-lg px-4 py-1 text-white font-semibold ${
+      className={`h-10 flex items-center justify-center rounded-lg px-4 py-1 my-2 text-white font-semibold ${
         disabled
           ? "cursor-not-allowed bg-gray-400"
           : "cursor-pointer bg-sky-700"
