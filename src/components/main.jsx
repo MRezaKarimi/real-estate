@@ -7,6 +7,7 @@ import CitySearchField from "./citySearchField";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import InputField from "./inputFields/inputField";
+import HorizontalDivider from "./horizontalDivider";
 
 const Main = () => {
   document.title = "MyEstate | Find Your Dream Home";
@@ -43,11 +44,10 @@ const Main = () => {
         />
       </div>
 
-      <div className="relative">
-        <div className="h-[0.1rem] bg-gray-300 rounded-xl mx-auto w-10/12"></div>
-        <div className="bg-white absolute -top-3 mx-auto left-0 right-0 w-fit text-center text-sky-900 font-semibold text-lg px-3">
-          Recently Added Properties
-        </div>
+      <div className="w-11/12 mx-auto">
+        <HorizontalDivider className="relative">
+          <span className="text-lg">Recently Added Properties</span>
+        </HorizontalDivider>
       </div>
       <PropertySlider />
 
