@@ -55,8 +55,7 @@ const SellHome = () => {
         </div>
         <img
           src={`${process.env.PUBLIC_URL}/sell.svg`}
-          className="w-0 sm:w-1/2 md:w-2/5 sticky top-16"
-          style={{ height: "calc(100vh - 4rem)" }}
+          className="w-0 sm:w-1/2 md:w-2/5 sticky top-16 h-[calc(100vh-4rem)]"
         />
       </div>
     </form>

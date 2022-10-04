@@ -21,10 +21,7 @@ const PropertyList = () => {
   return (
     <div className="basis-full lg:basis-1/2">
       {loading ? (
-        <div
-          className="flex justify-center items-center"
-          style={{ height: "calc(100vh - 4rem)" }}
-        >
+        <div className="flex justify-center items-center h-[calc(100vh-4rem)]">
           <Ellipsis color="#0369a1" />
         </div>
       ) : (
