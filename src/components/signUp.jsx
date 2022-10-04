@@ -12,7 +12,7 @@ import SocialLoginButton from "./socialLoginButton";
 
 const SignUp = () => {
   return (
-    <div className="flex flex-col m-auto p-2 max-w-sm">
+    <div className="flex flex-col m-auto w-11/12 max-w-sm">
       <FormHeader title="Create a new account" />
       <InputField
         placeholder="Username"
@@ -25,10 +25,8 @@ const SignUp = () => {
         type="password"
         validation="password"
       />
-      <div className="my-2 mx-2 sm:mx-0 flex flex-col">
-        <FilledButton text="Sign Up" />
-      </div>
-      <p className="text-xs my-2 mx-2 sm:mx-0 text-gray-700">
+      <FilledButton text="Sign Up" />
+      <p className="text-xs my-2 text-gray-700">
         By clicking Sign Up, you agree to our{" "}
         <span className="text-sky-700 cursor-pointer">
           terms and conditions
@@ -40,7 +38,7 @@ const SignUp = () => {
       </div>
       <div className="relative my-5">
         <div className="h-[0.1rem] bg-gray-300 rounded-xl mx-auto w-full"></div>
-        <div className="bg-white absolute -top-2.5 mx-auto left-0 right-0 w-32 text-center text-sky-700 font-semibold text-sm">
+        <div className="bg-white absolute -top-2.5 mx-auto left-0 right-0 w-fit px-3 text-center text-sky-700 font-semibold text-sm">
           Or Sign Up With
         </div>
       </div>

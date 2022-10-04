@@ -10,7 +10,7 @@ const SelectorField = ({ label, onChange, name, max = 8 }) => {
   };
 
   return (
-    <div className="my-4 mx-2 sm:mx-0">
+    <div className="my-4">
       <label
         htmlFor={label.replaceAll(" ", "_")}
         className="text-sky-900 font-semibold"

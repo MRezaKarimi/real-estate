@@ -18,10 +18,7 @@ const PropertyLocationForm = ({ style }) => {
     >
       <FormHeader title="Choose your location" />
       <div className="h-[500px]">
-        <LocationPicker
-          className="mx-2 sm:mx-0"
-          onLocationPicked={handlePickLocation}
-        />
+        <LocationPicker className="z-0" onLocationPicked={handlePickLocation} />
       </div>
       <input type="hidden" name="lat" value={lat ?? ""} />
       <input type="hidden" name="lng" value={lng ?? ""} />

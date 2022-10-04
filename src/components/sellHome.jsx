@@ -40,7 +40,7 @@ const SellHome = () => {
               height: step === 2 ? "auto" : "0",
             }}
           />
-          <div className="flex justify-between my-5 mx-2 sm:mx-0">
+          <div className="flex justify-between my-2">
             <OutlinedButton
               text="Back"
               onClick={prevStep}

@@ -11,7 +11,7 @@ const PropertyDetailsForm = ({ style }) => {
       className="transition-opacity ease-in duration-300 overflow-hidden"
     >
       <FormHeader title="Add Your Home Details" />
-      <div className="flex items-center mx-2 sm:mx-0">
+      <div className="flex items-center">
         <FontAwesomeIcon
           icon={faDollar}
           className="text-sky-900 text-xl mr-2"
