@@ -45,7 +45,7 @@ const Main = () => {
 
       <div className="relative">
         <div className="h-[0.1rem] bg-gray-300 rounded-xl mx-auto w-10/12"></div>
-        <div className="bg-white absolute -top-3 mx-auto left-0 right-0 w-[15.5rem] text-center text-sky-900 font-semibold text-lg">
+        <div className="bg-white absolute -top-3 mx-auto left-0 right-0 w-fit text-center text-sky-900 font-semibold text-lg px-3">
           Recently Added Properties
         </div>
       </div>
