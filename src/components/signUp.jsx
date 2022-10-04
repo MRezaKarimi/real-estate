@@ -11,6 +11,7 @@ import NavBarLink from "./navbarLink";
 import SocialLoginButton from "./socialLoginButton";
 
 const SignUp = () => {
+  document.title = "Sign Up";
   return (
     <div className="flex flex-col m-auto w-11/12 max-w-sm">
       <FormHeader title="Create a new account" />

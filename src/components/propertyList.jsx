@@ -13,6 +13,8 @@ const PropertyList = () => {
   const [queryParams] = useSearchParams();
   const dispatch = useDispatch();
 
+  document.title = `Property List | Page ${queryParams.get("page") ?? 1}`;
+
   useEffect(() => {
     dispatch(getProperties({ page: queryParams.get("page") ?? 1 }));
     window.scrollTo(0, 0);

@@ -5,6 +5,8 @@ import ContactInfoForm from "./forms/contactInfoForm";
 import PropertyDetailsForm from "./forms/propertyDetailsForm";
 
 const SellHome = () => {
+  document.title = "Sell Your Home";
+
   const [step, setStep] = useState(0);
 
   const nextStep = () => setStep(step + 1);

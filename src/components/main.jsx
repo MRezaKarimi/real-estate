@@ -9,6 +9,7 @@ import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import InputField from "./inputFields/inputField";
 
 const Main = () => {
+  document.title = "MyEstate | Find Your Dream Home";
   const navigate = useNavigate();
   const [city, setCity] = useState("");
 
