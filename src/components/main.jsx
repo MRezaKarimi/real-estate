@@ -45,9 +45,11 @@ const Main = () => {
       </div>
 
       <div className="w-11/12 mx-auto">
-        <HorizontalDivider className="relative">
-          <span className="text-lg">Recently Added Properties</span>
-        </HorizontalDivider>
+        <div className="sm:w-4/5 mx-auto">
+          <HorizontalDivider>
+            <span className="text-lg">Recently Added Properties</span>
+          </HorizontalDivider>
+        </div>
       </div>
       <PropertySlider />
 
