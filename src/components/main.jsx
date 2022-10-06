@@ -102,7 +102,7 @@ const Main = () => {
 
 const WhyUsItem = ({ title, description }) => {
   return (
-    <div className="rounded-lg border-l-8 border-sky-900 shadow-xl shadow-sky-900/15 hover:shadow-gray-300 duration-500 cursor-pointer p-5 my-6">
+    <div className="rounded-lg border-l-8 border-sky-900 shadow-xl shadow-sky-900/15 hover:shadow-2xl duration-500 cursor-pointer p-5 my-6">
       <p className="text-sky-900 text-xl font-bold">{title}</p>
       <p className="text-gray-600 mt-3">{description}</p>
     </div>
