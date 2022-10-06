@@ -1,10 +1,11 @@
 const HorizontalDivider = ({ children }) => {
   return (
-    <div className="relative">
-      <div className="h-[0.1rem] bg-gray-300 rounded-xl mx-auto w-full"></div>
-      <div className="bg-white absolute -top-3 mx-auto left-0 right-0 w-fit text-center text-sky-900 font-semibold px-3">
+    <div className="flex items-center">
+      <div className="grow h-[2px] bg-gray-300 rounded-xl mx-auto"></div>
+      <div className="font-semibold mx-3 text-center text-sky-900">
         {children}
       </div>
+      <div className="grow h-[2px] bg-gray-300 rounded-xl mx-auto"></div>
     </div>
   );
 };
