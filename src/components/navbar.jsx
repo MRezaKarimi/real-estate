@@ -2,12 +2,14 @@ import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FilledButton } from "./buttons";
 import NavBarLink from "./navbarLink";
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   return (
     <div
@@ -41,13 +43,8 @@ const NavBar = () => {
       <div className="hidden sm:flex items-center grow">
         <NavBarLink label="Buy" to="/buy" />
         <NavBarLink label="Sell" to="/sell" className="grow" />
-        <NavBarLink label="Login" to="/login" />
-        <Link
-          className="text-white text-md font-semibold bg-sky-700 rounded-full h-8 ml-3 px-3 py-1"
-          to="/sign-up"
-        >
-          Sign Up
-        </Link>
+        <NavBarLink label="Login" to="/login" className="mr-2" />
+        <FilledButton text="Sign Up" onClick={() => navigate("/sign-up")} />
       </div>
     </div>
   );
