@@ -13,7 +13,7 @@ const PropertyItem = ({ property }) => {
     <div className="flex flex-col rounded-lg border-2 border-gray-200">
       <ImageSlider images={property.images} />
       <a href={`/property/${property.id}`} target="blank" className="p-2.5">
-        <div className="flex flex-row justify-between">
+        <div className="flex flex-row justify-between items-center">
           <span className="self-center text-xl text-sky-900 font-semibold">
             ${numToMoney(property.price)}
           </span>
