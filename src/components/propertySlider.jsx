@@ -33,11 +33,12 @@ function PropertySlider() {
       slidesPerGroup={1}
       allowTouchMove={true}
       centeredSlides={true}
+      loop={true}
       pagination={{
         clickable: true,
       }}
       modules={[Pagination, Navigation]}
-      className="w-11/12 px-14 py-12"
+      className="w-11/12 px-14 py-10"
       breakpoints={{
         640: {
           slidesPerView: 2,
