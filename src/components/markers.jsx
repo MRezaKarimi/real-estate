@@ -4,6 +4,7 @@ import { Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import numToMoney from "../utils/numToMoney";
 import { useSelector } from "react-redux";
+import PropertyItem from "./propertyItem";
 
 export const markerIcon = new L.Icon({
   iconUrl: process.env.PUBLIC_URL + "/marker.svg",
@@ -32,17 +33,10 @@ const Markers = () => {
           position={[property.lat, property.long]}
           icon={markerIcon}
         >
-          <Popup key={property.id} maxHeight="100px">
-            <span className="text-xl font-medium block">
-              ${numToMoney(property.price)}
-            </span>
-            <a
-              href={`/details/${property.id}`}
-              className="block text-center"
-              target="_blank"
-            >
-              See Details
-            </a>
+          <Popup key={property.id} className="w-fit">
+            <div className="w-60">
+              <PropertyItem property={property} />
+            </div>
           </Popup>
         </Marker>
       ))}
