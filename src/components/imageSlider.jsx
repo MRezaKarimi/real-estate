@@ -28,7 +28,7 @@ const ImageSlider = ({ images }) => {
     <React.Fragment>
       <div
         style={{ backgroundImage: `url(${images[index]})` }}
-        className={`flex flex-col h-48 rounded-xl bg-cover bg-no-repeat`}
+        className={`flex flex-col h-48 rounded-t-lg bg-cover bg-no-repeat`}
       >
         <div className="flex flex-row items-center justify-between grow">
           <FontAwesomeIcon

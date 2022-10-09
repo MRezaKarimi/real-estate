@@ -27,7 +27,7 @@ const PropertyList = () => {
           <Ellipsis color="#0369a1" />
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-4 px-4">
           {propertyList.map((property, i) => (
             <PropertyItem key={i} property={property} />
           ))}
