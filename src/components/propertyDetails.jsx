@@ -47,7 +47,7 @@ const PropertyDetails = () => {
       <div className="w-11/12 mx-auto">
         <div className="flex flex-col gap-y-1 sm:flex-row my-5 sm:items-end justify-between">
           <div className="flex flex-col gap-y-2">
-            <span className="text-sky-900 text-2xl font-semibold mb-1">
+            <span className="text-sky-900 text-2xl font-semibold">
               {propertyDetail.city}
             </span>
             <span className="text-gray-500">
@@ -81,7 +81,7 @@ const PropertyDetails = () => {
               <span className="text-sky-900 font-bold text">
                 $
                 {numToMoney(
-                  Number(propertyDetail.price) / Number(propertyDetail.area)
+                  Math.trunc(Number(propertyDetail.price) / Number(propertyDetail.area))
                 )}
               </span>
               <FilledButton text="Request Loan" />
