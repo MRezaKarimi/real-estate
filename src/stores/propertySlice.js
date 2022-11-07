@@ -7,7 +7,7 @@ export const getProperties = createAsyncThunk(
   "property/getProperties",
   async ({ page, priceFrom, priceTo }, { rejectWithValue }) => {
     try {
-      const response = await API.get("/buy", {
+      const response = await API.get("/property", {
         params: { offset: page, limit: 10, priceFrom, priceTo },
       });
       return response.data;
@@ -33,7 +33,7 @@ export const getRecentProperties = createAsyncThunk(
   "property/getRecentProperties",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await API.get("/recent-properties");
+      const response = await API.get("/property/recent");
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -59,7 +59,7 @@ const propertySlice = createSlice({
     [getProperties.fulfilled]: (state, action) => {
       state.loading = false;
       state.propertyList = action.payload["data"];
-      state.mapBounds = action.payload["bounds"];
+      state.mapBounds = action.payload["mapBounds"];
       state.pagesCount = action.payload["pages"];
     },
     [getProperties.rejected]: (state, action) => {

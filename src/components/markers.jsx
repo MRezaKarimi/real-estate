@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import "leaflet/dist/leaflet.css";
 import { Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
-import numToMoney from "../utils/numToMoney";
 import { useSelector } from "react-redux";
 import PropertyItem from "./propertyItem";
 
@@ -20,16 +19,16 @@ const Markers = () => {
   const { propertyList, mapBounds } = useSelector((store) => store.property);
   const map = useMap();
   useEffect(() => {
-    if (mapBounds["top_left"] && mapBounds["bottom_right"]) {
-      map.fitBounds([mapBounds["top_left"], mapBounds["bottom_right"]]);
+    if (mapBounds["northWest"] && mapBounds["southEast"]) {
+      map.fitBounds([mapBounds["northWest"], mapBounds["southEast"]]);
     }
   }, [propertyList]);
 
   return (
     <>
-      {propertyList.map((property) => (
+      {propertyList.map((property, i) => (
         <Marker
-          key={property.id}
+          key={i}
           position={[property.lat, property.long]}
           icon={markerIcon}
         >

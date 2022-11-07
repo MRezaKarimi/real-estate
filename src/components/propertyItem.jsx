@@ -11,8 +11,8 @@ import ImageSlider from "./imageSlider";
 const PropertyItem = ({ property }) => {
   return (
     <div className="flex flex-col rounded-lg border-2 border-gray-200">
-      <ImageSlider images={property.images} />
-      <a href={`/property/${property.id}`} target="blank" className="p-2.5">
+      <ImageSlider images={property.images.map((image) => image.thumb)} />
+      <a href={`/property/${property._id}`} target="blank" className="p-2.5">
         <div className="flex flex-row justify-between items-center">
           <span className="self-center text-xl text-sky-900 font-semibold">
             ${numToMoney(property.price)}

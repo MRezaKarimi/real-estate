@@ -63,8 +63,8 @@ const PropertyDetails = () => {
         <ImageGallery
           images={propertyDetail.images.map((image) => {
             return {
-              thumb: image,
-              fullSize: image.replace("507x312xc.jpg", "1100xxs.jpg"),
+              thumb: image.thumb,
+              fullSize: image.fullSize.replace("507x312xc.jpg", "1100xxs.jpg"),
             };
           })}
         />
