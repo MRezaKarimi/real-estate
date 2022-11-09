@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBed,
   faCalendarDays,
+  faCheck,
   faEnvelope,
   faLocationDot,
   faMessage,
@@ -27,11 +28,13 @@ import { getPropertyById } from "../stores/propertySlice";
 import { Ellipsis } from "react-awesome-spinners";
 import numToMoney from "../utils/numToMoney";
 import ImageGallery from "./imageGallery";
+import { addToFavorites, isInFavorites } from "../utils/favoriteTools";
 
 const PropertyDetails = () => {
   document.title = "Property Details";
   const { id } = useParams();
   const dispatch = useDispatch();
+  const [isFavorite, setIsFavorite] = useState(isInFavorites(id));
   const { propertyDetail, loading } = useSelector((store) => store.property);
 
   useEffect(() => {
@@ -57,7 +60,18 @@ const PropertyDetails = () => {
           </div>
           <div className="flex gap-x-2">
             <OutlinedButton text="Share" icon={faShareNodes} />
-            <FilledButton text="Add To Favorite" icon={faHeart} />
+            {isFavorite ? (
+              <FilledButton text="Added To Favorites" icon={faCheck} disabled />
+            ) : (
+              <FilledButton
+                text="Add To Favorites"
+                icon={faHeart}
+                onClick={() => {
+                  addToFavorites(propertyDetail._id);
+                  setIsFavorite(true);
+                }}
+              />
+            )}
           </div>
         </div>
         <ImageGallery
@@ -81,7 +95,9 @@ const PropertyDetails = () => {
               <span className="text-sky-900 font-bold text">
                 $
                 {numToMoney(
-                  Math.trunc(Number(propertyDetail.price) / Number(propertyDetail.area))
+                  Math.trunc(
+                    Number(propertyDetail.price) / Number(propertyDetail.area)
+                  )
                 )}
               </span>
               <FilledButton text="Request Loan" />

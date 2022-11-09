@@ -35,6 +35,7 @@ const NavBar = () => {
           <div className="flex flex-col m-2">
             <NavBarLink label="Buy" to="/buy" className="my-1.5" />
             <NavBarLink label="Sell" to="/sell" className="my-1.5" />
+            <NavBarLink label="Favorites" to="/favorites" className="my-1.5" />
             <NavBarLink label="Login" to="/login" className="my-1.5" />
             <NavBarLink label="Sign Up" to="/sign-up" className="my-1.5" />
           </div>
@@ -42,7 +43,8 @@ const NavBar = () => {
       </div>
       <div className="hidden sm:flex items-center grow">
         <NavBarLink label="Buy" to="/buy" />
-        <NavBarLink label="Sell" to="/sell" className="grow" />
+        <NavBarLink label="Sell" to="/sell" />
+        <NavBarLink label="Favorites" to="/favorites" className="grow" />
         <NavBarLink label="Login" to="/login" className="mr-2" />
         <FilledButton text="Sign Up" onClick={() => navigate("/sign-up")} />
       </div>

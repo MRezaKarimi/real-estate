@@ -17,6 +17,20 @@ export const getProperties = createAsyncThunk(
   }
 );
 
+export const getPropertiesByIds = createAsyncThunk(
+  "property/getPropertiesByIds",
+  async (ids, { rejectWithValue }) => {
+    try {
+      const response = await API.get("/property", {
+        params: { ids: JSON.stringify(ids) },
+      });
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
 export const getPropertyById = createAsyncThunk(
   "property/getPropertyById",
   async (id, { rejectWithValue }) => {
@@ -46,6 +60,7 @@ const propertySlice = createSlice({
   initialState: {
     propertyList: [],
     recentProperties: [],
+    favoriteProperties: [],
     propertyDetail: null,
     loading: false,
     error: "",
@@ -83,6 +98,16 @@ const propertySlice = createSlice({
       state.propertyDetail = action.payload;
     },
     [getPropertyById.rejected]: (state, action) => {
+      state.loading = false;
+    },
+    [getPropertiesByIds.pending]: (state, action) => {
+      state.loading = true;
+    },
+    [getPropertiesByIds.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.favoriteProperties = action.payload["data"];
+    },
+    [getPropertiesByIds.rejected]: (state, action) => {
       state.loading = false;
     },
   },
