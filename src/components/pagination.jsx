@@ -40,7 +40,7 @@ const Pagination = ({ pagesCount }) => {
         icon={faChevronRight}
         onClick={handleNextPage}
         className={`w-5 h-5  text-white rounded-full p-1.5 ${
-          page === pagesCount
+          page === pagesCount || pagesCount == 0
             ? "bg-gray-400 cursor-not-allowed"
             : "bg-sky-900 cursor-pointer"
         }`}
