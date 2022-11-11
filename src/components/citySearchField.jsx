@@ -7,7 +7,7 @@ const CitySearchField = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [showSuggestion, setShowSuggestion] = useState(false);
 
-  const cities = ["New York City, NY", "Los Angles, CA", "Miami, FL"];
+  const cities = ["New York City", "Los Angles", "Miami"];
 
   const handleSelectCity = (city) => {
     setSearchQuery(city);
@@ -32,6 +32,7 @@ const CitySearchField = () => {
             onChange={(event) => setSearchQuery(event.target.value)}
             onBlur={() => setShowSuggestion(false)}
             onFocus={() => setShowSuggestion(true)}
+            autocomplete="off"
             name="city"
             className="bg-gray-100 rounded-lg w-full p-1.5 my-1 outline-none focus:border-sky-500 border-2"
             placeholder="Enter a city or state name"
