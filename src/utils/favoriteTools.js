@@ -12,7 +12,7 @@ export function addToFavorites(id) {
 
 export function isInFavorites(id) {
   const favorites = getFavorites();
-  return favorites.findIndex((f) => f == id) > -1;
+  return favorites.includes(id);
 }
 
 export function getFavorites(params) {
