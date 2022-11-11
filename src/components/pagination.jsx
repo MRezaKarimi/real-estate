@@ -12,13 +12,16 @@ const Pagination = ({ pagesCount }) => {
 
   const handleNextPage = () => {
     if (page < pagesCount) {
-      setQueryParams({ page: page + 1 });
+      // Just update "page" param and leave others as they are
+      queryParams.set("page", page + 1);
+      setQueryParams(queryParams);
     }
   };
 
   const handlePrevPage = () => {
     if (page > 1) {
-      setQueryParams({ page: page - 1 });
+      queryParams.set("page", page - 1);
+      setQueryParams(queryParams);
     }
   };
 
