@@ -22,13 +22,16 @@ const SocialIcon = ({ icon, url }) => {
 const Footer = () => {
   return (
     <div className="bg-sky-900 py-5 text-white">
-      <div className="w-11/12 mx-auto flex flex-col sm:flex-row gap-y-5 justify-between items-center">
+      <div className="w-11/12 mx-auto flex flex-col sm:flex-row gap-y-5 justify-between items-center text-center sm:text-start">
         <ul>
           <li>
             <Link to="/buy">Buy property</Link>
           </li>
           <li>
             <Link to="/sell">Sell property</Link>
+          </li>
+          <li>
+            <Link to="/favorites">Favorite properties</Link>
           </li>
         </ul>
         <div className="flex flex-col text-center order-last sm:order-none">
