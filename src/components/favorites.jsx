@@ -30,14 +30,13 @@ const Favorites = () => {
 
   return (
     <>
-      {ids.length === 0 ? (
+      {ids.length > 0 ? (
         <div>
           <div className="flex justify-center h-[calc(100vh-4rem)]">
             <span className="text-sky-900 text-2xl font-semibold my-auto">
-              Favorite list is empty
+              Favorite list is empty!
             </span>
           </div>
-          <Footer />
         </div>
       ) : loading ? (
         <div className="flex justify-center items-center h-[calc(100vh-4rem)]">
@@ -55,13 +54,14 @@ const Favorites = () => {
               onClick={handleClearAll}
             />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-8 gap-x-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-8 gap-x-4 mb-32">
             {favoriteProperties.map((property, i) => (
               <PropertyItem key={i} property={property} />
             ))}
           </div>
         </div>
       )}
+      <Footer />
     </>
   );
 };
