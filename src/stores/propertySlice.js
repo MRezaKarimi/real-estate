@@ -8,7 +8,14 @@ export const getProperties = createAsyncThunk(
   async ({ page, city, northWest, southEast }, { rejectWithValue }) => {
     try {
       const response = await API.get("/property", {
-        params: { offset: page, limit: 10, city, northWest, southEast },
+        params: {
+          // Page number starts from 1 but offset starts from zero
+          offset: Number(page) - 1,
+          limit: 10,
+          city,
+          northWest,
+          southEast,
+        },
       });
       return response.data;
     } catch (error) {
