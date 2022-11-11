@@ -19,7 +19,12 @@ const Markers = () => {
   const { propertyList, mapBounds } = useSelector((store) => store.property);
   const map = useMap();
   useEffect(() => {
-    if (mapBounds["northWest"] && mapBounds["southEast"]) {
+    if (
+      mapBounds["northWest"] &&
+      mapBounds["southEast"] &&
+      !mapBounds["northWest"].includes(null) &&
+      !mapBounds["southEast"].includes(null)
+    ) {
       map.fitBounds([mapBounds["northWest"], mapBounds["southEast"]]);
     }
   }, [propertyList]);
