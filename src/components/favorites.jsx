@@ -30,7 +30,7 @@ const Favorites = () => {
 
   return (
     <>
-      {ids.length > 0 ? (
+      {ids.length === 0 ? (
         <div>
           <div className="flex justify-center h-[calc(100vh-4rem)]">
             <span className="text-sky-900 text-2xl font-semibold my-auto">
