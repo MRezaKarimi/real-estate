@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import { createSearchParams, useNavigate } from "react-router-dom";
-import { FilledButton, OutlinedButton } from "./buttons";
+import { FilledButton } from "./buttons";
 import Footer from "./footer";
 import PropertySlider from "./propertySlider";
 import CitySearchField from "./citySearchField";
@@ -11,8 +9,6 @@ import HorizontalDivider from "./horizontalDivider";
 
 const Main = () => {
   document.title = "MyEstate | Find Your Dream Home";
-  const navigate = useNavigate();
-  const [city, setCity] = useState("");
 
   return (
     <>
@@ -23,18 +19,7 @@ const Main = () => {
               Find Your Dream Home
             </h2>
             <div className="flex flex-col sm:flex-row items-center mb-4 rounded-xl shadow-xl shadow-sky-900/15 p-8">
-              <CitySearchField onChange={(value) => setCity(value)} />
-              <div className="my-4 mx-2 sm:place-self-center">
-                <FilledButton
-                  text="Search"
-                  onClick={() =>
-                    navigate({
-                      pathname: "/buy",
-                      search: `${createSearchParams({ city })}`,
-                    })
-                  }
-                />
-              </div>
+              <CitySearchField />
             </div>
           </div>
         </div>
