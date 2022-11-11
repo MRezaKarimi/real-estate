@@ -20,6 +20,8 @@ const PropertyList = () => {
       getProperties({
         page: queryParams.get("page") ?? 1,
         city: queryParams.get("city"),
+        northWest: queryParams.get("northWest"),
+        southEast: queryParams.get("southEast"),
       })
     );
     window.scrollTo(0, 0);

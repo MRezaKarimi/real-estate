@@ -11,10 +11,11 @@ const MapView = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [_, setQueryParams] = useSearchParams();
 
-  const handleSearchArea = () => {
+  const handleClickSearchArea = () => {
+    setShowSearch(false);
     setQueryParams({
-      northWest: `${mapBounds.northWest.lat},${mapBounds.northWest.lng}`,
-      southEast: `${mapBounds.southEast.lat},${mapBounds.southEast.lng}`,
+      northWest: `[${mapBounds.northWest.lat},${mapBounds.northWest.lng}]`,
+      southEast: `[${mapBounds.southEast.lat},${mapBounds.southEast.lng}]`,
     });
   };
 
@@ -29,7 +30,7 @@ const MapView = () => {
         {showSearch && (
           <div
             className="absolute w-fit bg-white shadow-lg rounded-lg z-10 left-0 right-0 mx-auto top-4 py-2 px-3 text-sky-900 font-semibold cursor-pointer"
-            onClick={handleSearchArea}
+            onClick={handleClickSearchArea}
           >
             <FontAwesomeIcon icon={faSearch} className="mr-2" />
             Search this area
