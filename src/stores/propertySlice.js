@@ -5,10 +5,10 @@ const API = axios.create({ baseURL: process.env.REACT_APP_BASE_URL });
 
 export const getProperties = createAsyncThunk(
   "property/getProperties",
-  async ({ page, priceFrom, priceTo }, { rejectWithValue }) => {
+  async ({ page, city, northWest, southEast }, { rejectWithValue }) => {
     try {
       const response = await API.get("/property", {
-        params: { offset: page, limit: 10, priceFrom, priceTo },
+        params: { offset: page, limit: 10, city, northWest, southEast },
       });
       return response.data;
     } catch (error) {
