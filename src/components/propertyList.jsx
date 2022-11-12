@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import PropertyItem from "./propertyItem";
 import { useDispatch, useSelector } from "react-redux";
-import { Ellipsis } from "react-awesome-spinners";
 import { useSearchParams } from "react-router-dom";
 import { getProperties } from "../stores/propertySlice";
 import Pagination from "./pagination";
+import { PropagateLoader } from "react-spinners";
 
 const PropertyList = () => {
   const { propertyList, pagesCount, loading } = useSelector(
@@ -31,7 +31,7 @@ const PropertyList = () => {
     <div className="basis-full lg:basis-1/2">
       {loading ? (
         <div className="flex justify-center items-center h-[calc(100vh-4rem)]">
-          <Ellipsis color="#0369a1" />
+          <PropagateLoader color="#0369a1" />
         </div>
       ) : propertyList && propertyList.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-4 px-4">

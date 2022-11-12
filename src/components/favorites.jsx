@@ -1,7 +1,7 @@
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
-import { Ellipsis } from "react-awesome-spinners";
 import { useDispatch, useSelector } from "react-redux";
+import { PropagateLoader } from "react-spinners";
 import { getPropertiesByIds } from "../stores/propertySlice";
 import { clearFavorites, getFavorites } from "../utils/favoriteTools";
 import { OutlinedButton } from "./buttons";
@@ -40,7 +40,7 @@ const Favorites = () => {
         </div>
       ) : loading ? (
         <div className="flex justify-center items-center h-[calc(100vh-4rem)]">
-          <Ellipsis color="#0369a1" />
+          <PropagateLoader color="#0369a1" />
         </div>
       ) : (
         <div className="w-11/12 mx-auto">

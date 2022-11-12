@@ -4,11 +4,11 @@ import PropertyItem from "./propertyItem";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getRecentProperties } from "../stores/propertySlice";
-import { Ellipsis } from "react-awesome-spinners";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { PropagateLoader } from "react-spinners";
 
 function PropertySlider() {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ function PropertySlider() {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
-        <Ellipsis color="#0369a1" />
+        <PropagateLoader color="#0369a1" />
       </div>
     );
   }

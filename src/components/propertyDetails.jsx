@@ -25,10 +25,10 @@ import "swiper/css/thumbs";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { getPropertyById } from "../stores/propertySlice";
-import { Ellipsis } from "react-awesome-spinners";
 import numToMoney from "../utils/numToMoney";
 import ImageGallery from "./imageGallery";
 import { addToFavorites, isInFavorites } from "../utils/favoriteTools";
+import { PropagateLoader } from "react-spinners";
 
 const PropertyDetails = () => {
   document.title = "Property Details";
@@ -43,7 +43,7 @@ const PropertyDetails = () => {
 
   return loading || propertyDetail == null ? (
     <div className="flex justify-center items-center h-[calc(100vh-4rem)]">
-      <Ellipsis color="#0369a1" />
+      <PropagateLoader color="#0369a1" />
     </div>
   ) : (
     <>
