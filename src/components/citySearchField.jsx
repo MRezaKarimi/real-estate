@@ -32,7 +32,7 @@ const CitySearchField = () => {
             onChange={(event) => setSearchQuery(event.target.value)}
             onBlur={() => setShowSuggestion(false)}
             onFocus={() => setShowSuggestion(true)}
-            autocomplete="off"
+            autoComplete="off"
             name="city"
             className="bg-gray-100 rounded-lg w-full p-1.5 my-1 outline-none focus:border-sky-500 border-2"
             placeholder="Enter a city or state name"
