@@ -147,7 +147,7 @@ const PropertyDetails = () => {
               <PropertyFeatureItem
                 icon={faCalendarDays}
                 feature="Year Built"
-                value={propertyDetail.year}
+                value={2016}
               />
             </div>
             <p className="text-sky-900 text-xl font-semibold mt-10 mb-5">
