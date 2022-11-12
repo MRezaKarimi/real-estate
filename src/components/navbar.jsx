@@ -25,8 +25,10 @@ const NavBar = () => {
       <div className="block sm:hidden">
         <FontAwesomeIcon
           icon={showMenu ? faClose : faBars}
-          className="text-sky-700 h-6"
+          className="text-sky-700 h-6 outline-0"
           onClick={() => setShowMenu(!showMenu)}
+          onBlur={() => setShowMenu(false)}
+          tabIndex="0"
         />
         <div
           className="sm:hidden absolute top-16 right-0 w-full bg-white shadow-xl shadow-sky-900/15 duration-300 origin-top overflow-hidden z-50"
